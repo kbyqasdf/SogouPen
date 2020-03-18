@@ -39,6 +39,7 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	QPalette palette;
 	palette.setColor(QPalette::Window, QColor(0xef, 0xf2, 0xf6, 0xff));
 	this->setPalette(palette);
+	//this->setStyleSheet("#Travel{background-color:#ffeff2f6;}");
 	QVBoxLayout * pTravelLayout = new QVBoxLayout(this);
 	pTravelLayout->setObjectName("travel");
 	this->setFixedWidth(190);
@@ -97,6 +98,7 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pListWidget = new QWidget;
 	m_pListWidget->setFixedWidth(190);
 	m_pListWidget->setMinimumHeight(444);
+	m_pListWidget->setPalette(palette);
 	QVBoxLayout * pListVLayout = new QVBoxLayout(m_pListWidget);
 	m_pListWidget->setContentsMargins(0, 0, 0, 0);
 	pListVLayout->setSpacing(0);
@@ -156,6 +158,7 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pImportFromDevWidget->setFixedWidth(190);
 	m_pImportFromDevWidget->setHidden(true);
 	m_pImportFromDevWidget->setContentsMargins(0, 0, 0, 0);
+	m_pImportFromDevWidget->setPalette(palette);
 	m_pImportFromDevLayout = new QVBoxLayout(m_pImportFromDevWidget);
 	m_pImportFromDevLayout->setSpacing(0);
 	m_pImportFromDevLayout->setContentsMargins(0, 0, 0, 0);
@@ -169,6 +172,7 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pRecorderWidget = new QWidget;
 	m_pRecorderWidget->setFixedWidth(190);
 	m_pRecorderWidget->setContentsMargins(0, 0, 0, 0);
+	m_pRecorderWidget->setPalette(palette);
 	m_pRecorderVLayout = new QVBoxLayout(m_pRecorderWidget);
 	m_pRecorderVLayout->setSpacing(0);
 	m_pRecorderVLayout->setContentsMargins(0, 0, 0, 0);
@@ -243,7 +247,6 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	pTravelLayout->addSpacing(24);
 
 	AddImportFromDevBtn();
-
 	AddRecordBtn();
 
 	InitConnect();

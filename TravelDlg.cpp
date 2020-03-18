@@ -6,16 +6,13 @@
 #define    ALL_BTN      0
 #define    LOCAL_BTN	1001
 
-#define BTN_ALL_QSS				"PushButtonEx{font-family:Microsoft YaHei; font-size:14px; color:#ff000000;border:none;}" \
-								"PushButtonEx:hover{background-color:#4dff7846;}" \
-								"PushButtonEx:pressed{background-color:#80ff7846;}"
+#define BTN_ALL_QSS					"PushButtonEx{font-family:Microsoft YaHei; font-size:14px; color:#ff000000;border:none;}" 
 
 #define BTN_DEV_BTN_QSS				"PushButtonEx{font-family:Microsoft YaHei; font-size:12px; color:#ff000000;border:none;}" 
 								 
-#define BTN_ALL_SELECTED_QSS	"PushButtonEx{font-family:Microsoft YaHei; font-size:14px; color:#ffffffff; \
-								  border:none; background-color:#FFff7846;}" \
+#define BTN_ALL_SELECTED_QSS		"PushButtonEx{font-family:Microsoft YaHei; font-size:14px; color:#ffffffff; border:none;}" 
 
-#define BTN_DEV_SELECTED_QSS    "PushButtonEx{font-family:Microsoft YaHei; font-size:12px; color:#ffffffff; border:none;}" \
+#define BTN_DEV_SELECTED_QSS		"PushButtonEx{font-family:Microsoft YaHei; font-size:12px; color:#ffffffff; border:none;}" 
 
 #define BTN_IMPORT_FROM_DEV_QSS		"PushButtonEx{font-family:Microsoft YaHei; font-size:14px; color:#ff000000; border:none;}"
 
@@ -23,29 +20,35 @@
 									"PushButtonEx:hover{background-color:#ffffd6c7;}"\
 									"PushButtonEx:pressed{background-color:#ffffbba2;}"
 
-#define BTN_SET_QSS			"QPushButton{font-family:Microsoft YaHei; font-size:12px; border:none;}" \
-							"QPushButton:hover{color:#ffff7846}" \
-							"QPushButton:pressed{color:#FFec4703}"
+#define BTN_SET_QSS					"QPushButton{font-family:Microsoft YaHei; font-size:12px; border:none;}" \
+									"QPushButton:hover{color:#ffff7846}" \
+									"QPushButton:pressed{color:#FFec4703}"
 
 CTravelDlg::CTravelDlg(QWidget * parent)
 	: QWidget(parent)
 	, m_pButtonGroup(NULL)
 	, m_iButtonId(-1)
-	, m_iImportButtonCount(0)
-	, m_iRecordBtnCount(0)
 	, m_pCurrentSelectedButton(NULL)
 {
-	setProperty("class", "Travel");
 	QPalette palette;
 	palette.setColor(QPalette::Window, QColor(0xef, 0xf2, 0xf6, 0xff));
 	this->setPalette(palette);
-	//this->setStyleSheet("#Travel{background-color:#ffeff2f6;}");
-	QVBoxLayout * pTravelLayout = new QVBoxLayout(this);
-	pTravelLayout->setObjectName("travel");
+	m_pTravelLayout = new QVBoxLayout(this);
+	m_pTravelLayout->setContentsMargins(0, 0, 0, 0);
+	m_pTravelLayout->setSpacing(0);
 	this->setFixedWidth(190);
 	this->setMinimumHeight(688);
 	setAutoFillBackground(true);
 
+	initPersonalInfo();
+	initButtonListArea();
+	initBottomButton();
+
+	InitConnect();
+}
+
+void CTravelDlg::initPersonalInfo()
+{
 	QLabel * pTitleLabel = new QLabel();
 	pTitleLabel->setPixmap(QPixmap("./Resources/pic/SogouLogo.png"));
 	pTitleLabel->setFixedSize(144, 32);
@@ -95,6 +98,23 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	pLabel->setFixedSize(190, 1);
 	pLabel->setStyleSheet("background-color:#33bec3c9");
 
+	m_pTravelLayout->addSpacing(22);
+	m_pTravelLayout->addLayout(pTitleHLayout);
+	m_pTravelLayout->addSpacing(18);
+	m_pTravelLayout->addLayout(pIconHLayout);
+	m_pTravelLayout->addSpacing(9);
+	m_pTravelLayout->addLayout(pUserNameHLayout, Qt::AlignTop);
+	m_pTravelLayout->addSpacing(3);
+	m_pTravelLayout->addLayout(pVipHLayout);
+	m_pTravelLayout->addSpacing(20);
+	m_pTravelLayout->addWidget(pLabel);
+}
+
+void CTravelDlg::initButtonListArea()
+{
+	QPalette palette;
+	palette.setColor(QPalette::Window, QColor(0xef, 0xf2, 0xf6, 0xff));
+
 	m_pListWidget = new QWidget;
 	m_pListWidget->setFixedWidth(190);
 	m_pListWidget->setMinimumHeight(444);
@@ -131,6 +151,7 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pAllButton->setHotBkColor(QColor(0xff, 0x78, 0x46, 0x4d));
 	m_pAllButton->setPressedBkColor(QColor(0xff, 0x78, 0x46, 0x80));
 	m_pAllButton->setSelectedBkColor(QColor(0xff, 0x78, 0x46, 0xff));
+	m_pAllButton->setCursor(QCursor(Qt::PointingHandCursor));
 
 	m_pLocalButton = new PushButtonEx;
 	m_pButtonGroup->addButton(m_pLocalButton, LOCAL_BTN);
@@ -144,6 +165,8 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pLocalButton->setHotBkColor(QColor(0xff, 0x78, 0x46, 0x4d));
 	m_pLocalButton->setPressedBkColor(QColor(0xff, 0x78, 0x46, 0x80));
 	m_pLocalButton->setSelectedBkColor(QColor(0xff, 0x78, 0x46, 0xff));
+	m_pLocalButton->setCursor(QCursor(Qt::PointingHandCursor));
+	//m_pLocalButton->setVisible(false);
 
 	m_pImportFromDevBtn = new PushButtonEx;
 	m_pImportFromDevBtn->setFixedSize(190, 40);
@@ -152,13 +175,15 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pImportFromDevBtn->setExpandIcon("./Resources/pic/expand.png");
 	m_pImportFromDevBtn->setCollapseIcon("./Resources/pic/collapse.png");
 	m_pImportFromDevBtn->setStyleSheet(BTN_IMPORT_FROM_DEV_QSS);
-	//m_pImportFromDevBtn->setVisible(false);
+	m_pImportFromDevBtn->setVisible(false);
+	m_pImportFromDevBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 	m_pImportFromDevWidget = new QWidget;
 	m_pImportFromDevWidget->setFixedWidth(190);
 	m_pImportFromDevWidget->setHidden(true);
 	m_pImportFromDevWidget->setContentsMargins(0, 0, 0, 0);
 	m_pImportFromDevWidget->setPalette(palette);
+	m_pImportFromDevWidget->setVisible(false);
 	m_pImportFromDevLayout = new QVBoxLayout(m_pImportFromDevWidget);
 	m_pImportFromDevLayout->setSpacing(0);
 	m_pImportFromDevLayout->setContentsMargins(0, 0, 0, 0);
@@ -176,19 +201,8 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pRecorderVLayout = new QVBoxLayout(m_pRecorderWidget);
 	m_pRecorderVLayout->setSpacing(0);
 	m_pRecorderVLayout->setContentsMargins(0, 0, 0, 0);
+	m_pRecorderVLayout->addStretch();
 
-	pTravelLayout->setContentsMargins(0, 0, 0, 0);
-	pTravelLayout->setSpacing(0);
-	pTravelLayout->addSpacing(22);
-	pTravelLayout->addLayout(pTitleHLayout);
-	pTravelLayout->addSpacing(18);
-	pTravelLayout->addLayout(pIconHLayout);
-	pTravelLayout->addSpacing(9);
-	pTravelLayout->addLayout(pUserNameHLayout, Qt::AlignTop);
-	pTravelLayout->addSpacing(3);
-	pTravelLayout->addLayout(pVipHLayout);
-	pTravelLayout->addSpacing(20);
-	pTravelLayout->addWidget(pLabel);
 	pListVLayout->addSpacing(10);
 	pListVLayout->addLayout(pMyAudioHLayout);
 	pListVLayout->addSpacing(10);
@@ -199,8 +213,11 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	pListVLayout->addSpacing(20);
 	pListVLayout->addWidget(pDeviceLabel);
 	pListVLayout->addWidget(m_pRecorderWidget);
-	pTravelLayout->addWidget(m_pListWidget);
+	m_pTravelLayout->addWidget(m_pListWidget);
+}
 
+void CTravelDlg::initBottomButton()
+{
 	m_pImportFromLocalBtn = new PushButtonEx;
 	m_pImportFromLocalBtn->setFixedSize(150, 36);
 	m_pImportFromLocalBtn->setBtnName("导入本地音频");
@@ -212,21 +229,24 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	m_pImportFromLocalBtn->setBkColor(QColor(0xdf, 0xe1, 0xe6, 0xff));
 	m_pImportFromLocalBtn->setHotBkColor(QColor(0xff, 0xd6, 0xc7, 0xff));
 	m_pImportFromLocalBtn->setPressedBkColor(QColor(0xff, 0xbb, 0xa2, 0xff));
+	m_pImportFromLocalBtn->setCursor(QCursor(Qt::PointingHandCursor));
 	QHBoxLayout * pImportFromLocalLayout = new QHBoxLayout;
 	pImportFromLocalLayout->addWidget(m_pImportFromLocalBtn);
 	pImportFromLocalLayout->setContentsMargins(20, 0, 20, 0);
-	pTravelLayout->addLayout(pImportFromLocalLayout);
-	pTravelLayout->addSpacing(10);
+	m_pTravelLayout->addLayout(pImportFromLocalLayout);
+	m_pTravelLayout->addSpacing(10);
 
 	m_pSetBtn = new QPushButton;
 	m_pSetBtn->setText("高级设置");
 	m_pSetBtn->setFixedSize(48, 24);
 	m_pSetBtn->setStyleSheet(BTN_SET_QSS);
+	m_pSetBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 	m_pHelpBtn = new QPushButton;
 	m_pHelpBtn->setText("帮助中心");
 	m_pHelpBtn->setFixedSize(48, 24);
 	m_pHelpBtn->setStyleSheet(BTN_SET_QSS);
+	m_pHelpBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 	QLabel * pSplitLabel = new QLabel;
 	pSplitLabel->setFixedSize(1, 9);
@@ -243,13 +263,8 @@ CTravelDlg::CTravelDlg(QWidget * parent)
 	pSetHLayout->addWidget(m_pHelpBtn);
 	pSetHLayout->addStretch();
 
-	pTravelLayout->addLayout(pSetHLayout);
-	pTravelLayout->addSpacing(24);
-
-	AddImportFromDevBtn();
-	AddRecordBtn();
-
-	InitConnect();
+	m_pTravelLayout->addLayout(pSetHLayout);
+	m_pTravelLayout->addSpacing(24);
 }
 
 CTravelDlg::~CTravelDlg()
@@ -261,6 +276,8 @@ void CTravelDlg::InitConnect()
 {
 	connect(m_pButtonGroup, SIGNAL(buttonClicked(QAbstractButton *)), this, SLOT(slotButtonGroupClick(QAbstractButton *)));
 	connect(m_pImportFromDevBtn, SIGNAL(clicked()), this, SLOT(slotImportFromDevBtnClick()));
+	connect(m_pSetBtn, SIGNAL(clicked()), this, SLOT(slotSetBtnClick()));
+	connect(m_pHelpBtn, SIGNAL(clicked()), this, SLOT(slotHelpBtnClick()));
 }
 
 void CTravelDlg::slotButtonGroupClick(QAbstractButton * pButton)
@@ -317,25 +334,15 @@ void CTravelDlg::AddImportFromDevBtn()
 	pButton->setHotBkColor(QColor(0xff, 0x78, 0x46, 0x4d));
 	pButton->setPressedBkColor(QColor(0xff, 0x78, 0x46, 0x80));
 	pButton->setSelectedBkColor(QColor(0xff, 0x78, 0x46, 0xff));
-	m_pButtonGroup->addButton(pButton, ++m_iImportButtonCount);
+	pButton->setCursor(QCursor(Qt::PointingHandCursor));
+	m_pButtonGroup->addButton(pButton);
 	m_listButtonEx.push_back(pButton);
 	m_pImportFromDevLayout->addWidget(pButton);
-
-	PushButtonEx * pButton1 = new PushButtonEx;
-	pButton1->setFixedSize(190, 40);
-	pButton1->setBtnName("搜狗C2录音笔");
-	pButton1->setStyleSheet(BTN_DEV_BTN_QSS);
-	pButton1->setFocusPolicy(Qt::ClickFocus);
-	pButton1->setAutoFillBackground(true);
-	pButton1->setHotBkColor(QColor(0xff, 0x78, 0x46, 0x4d));
-	pButton1->setPressedBkColor(QColor(0xff, 0x78, 0x46, 0x80));
-	pButton1->setSelectedBkColor(QColor(0xff, 0x78, 0x46, 0xff));
-	m_pButtonGroup->addButton(pButton1, ++m_iImportButtonCount);
-	m_listButtonEx.push_back(pButton1);
-	m_pImportFromDevLayout->addWidget(pButton1);
 	
-	m_pImportFromDevWidget->setFixedHeight(40 * m_iImportButtonCount);
-	m_pImportFromDevWidget->setHidden(true);
+	m_pImportFromDevWidget->setFixedHeight(40 * m_listButtonEx.size());
+	m_pImportFromDevBtn->setVisible(true);
+	m_pImportFromDevWidget->setVisible(true);
+	m_pImportFromDevWidget->setHidden(!m_pImportFromDevBtn->isExpand());
 }
 
 void CTravelDlg::slotImportFromDevBtnClick()
@@ -358,7 +365,18 @@ void CTravelDlg::AddRecordBtn()
 	pButton->setHotBkColor(QColor(0xff, 0x78, 0x46, 0x4d));
 	pButton->setPressedBkColor(QColor(0xff, 0x78, 0x46, 0x80));
 	pButton->setSelectedBkColor(QColor(0xff, 0x78, 0x46, 0xff));
-	m_pButtonGroup->addButton(pButton, m_iImportButtonCount + m_iRecordBtnCount + 2);
-	m_pRecorderVLayout->addWidget(pButton);
-	m_pRecorderVLayout->addStretch();
+	pButton->setCursor(QCursor(Qt::PointingHandCursor));
+	m_listRecord.push_back(pButton);
+	m_pButtonGroup->addButton(pButton);
+	m_pRecorderVLayout->insertWidget(m_listRecord.size() - 1, pButton);
+}
+
+void CTravelDlg::slotSetBtnClick()
+{
+	AddImportFromDevBtn();
+}
+
+void CTravelDlg::slotHelpBtnClick()
+{
+	AddRecordBtn();
 }

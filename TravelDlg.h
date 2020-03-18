@@ -17,7 +17,10 @@ public:
 	void AddRecordBtn();
 
 private:
+	void initPersonalInfo();
+	void initButtonListArea();
 	void InitConnect();
+	void initBottomButton();
 
 protected:
 	void keyPressEvent(QKeyEvent * event);
@@ -25,6 +28,8 @@ protected:
 private slots:
 	void slotButtonGroupClick(QAbstractButton * pButton);
 	void slotImportFromDevBtnClick();
+	void slotSetBtnClick();
+	void slotHelpBtnClick();
 
 private:
 	QButtonGroup * m_pButtonGroup;
@@ -39,15 +44,15 @@ private:
 	QWidget  *     m_pListWidget;
 	QPushButton *  m_pSetBtn;
 	QPushButton *  m_pHelpBtn;
-	QVector<PushButtonEx *> m_vecButtonEx;
 	std::list<PushButtonEx *> m_listButtonEx;
 	std::list<PushButtonEx *> m_listRecord;
 	QScrollArea * m_pScrollArea;
+	QVBoxLayout * m_pTravelLayout;
 	
 
 private:
 	int				m_iButtonId;
-	int             m_iImportButtonCount;
-	int             m_iRecordBtnCount;
+	//int             m_iImportButtonCount;
+	//int             m_iRecordBtnCount;
 	PushButtonEx  * m_pCurrentSelectedButton;
 };

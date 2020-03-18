@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="351,250" caption="0,0,0,36" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30">
+
+	<Font id="0" name="微软雅黑" size="12" />
+	<Font id="1" name="微软雅黑" size="16" />
+	<Font id="2" name="微软雅黑" size="13" />
+	<Font id="3" name="微软雅黑" size="14" />
+	<Font id="4" name="微软雅黑" size="10" />
+	
+	<VerticalLayout name="MainVLayout" width="351" height="250" bkcolor="#ffffffff">
+		<Label name="BolderLabel" height="1" bkcolor="#ffe24e1a"/>
+		<HorizontalLayout height="28">
+			<Label name="IconLabel" bkimage="pic/icon.png" padding="8,5,0,0" width="22" height="22"/>
+			<Label name="TitleLabel" text="绑定手机号" font="1" padding="6,8,0,0" width="80" height="16"/>
+			<HorizontalLayout />
+			<Button name="closebtn" tooltip="关闭" bkimage="file='pic/close-normal.png' dest='12,6,30,24'" width="42" height="31" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+		</HorizontalLayout>
+		
+		<RichEdit name="PhoneNumEdit" rich="false" tipvalue="请输入手机号" textpadding="11,7,0,8" multiline="false" valign="center" padding="36,26,0,0" width="280" height="32" bordercolor="#ffd6d9e0" bordersize="1" font="2"/>
+		
+		<HorizontalLayout height="32" padding="0,14,0,0">
+			<RichEdit name="InputVerifyResultEdit" width="187" multiline="false" textpadding="11,7,0,8" valign="center" height="32" bordercolor="#ffd6d9e0" bordersize="1" font="2" tipvalue="请输入验证结果" textcolor="#4D000000" rich="false" padding="36,0,0,0"/>
+			<Button name="IconButton" width="80" height="32" padding="12,0,0,0"/>
+		</HorizontalLayout>
+
+		<HorizontalLayout height="32" padding="0,14,0,0">
+			<RichEdit name="VerifuyCodeEdit" rich="false" width="280" textpadding="11,7,0,8" multiline="false" height="32" bordercolor="#ffd6d9e0" bordersize="1" font="2" padding="36,0,0,0" tipvalue="请输入手机验证码" valign="center" textcolor="#4D000000"/>
+			<Button name="GetVerifyCodeBtn" width="65" height="13" text="获取验证码" float="true" align="right" textcolor="ffff7846" pos="239,10,304,23"/>
+		</HorizontalLayout>		
+		<HorizontalLayout height="12" padding="0,8,0,0">
+			<Label name="BindFailurePromptLabel" text="请输入用户名/手机号/邮箱" font="4" padding="35,0,0,0" textcolor="fff23b3b" visible="false"/>
+		</HorizontalLayout>
+		
+		<Button name="BindPhoneBtn" bkcolor="#ffff7846" text="手机绑定" font="3" textcolor="ffffffff" width="120" height="30" align="center" hotbkcolor="ffff8051" pushedbkcolor="fff45514" padding="116,9,0,16"/>
+		
+	</VerticalLayout>
+</Window>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,40" size="1200,800" showshadow="true" sizebox="4,4,4,4" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30">
+	<Font id="0" name="微软雅黑" size="12" />
+	<Font id="1" name="微软雅黑" size="14" />
+	<Font id="2" name="微软雅黑" size="16" />
+	
+	<VerticalLayout name="MainVLayout" bkcolor="#ffffffff">
+		<HorizontalLayout height="40" bkcolor="#ffffffff">
+			<HorizontalLayout />
+    		<Button name="closebtn" tooltip="关闭" bkimage="file='pic/close-normal.png' dest='12,12,30,30'" width="40" height="40" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout height="32" padding="0,8,0,0"> 
+			<Label name="PromptLabel" text="本地转写结果允许本地编辑，无法在线编辑" padding="24,10,0,0" textcolor="#ff999999"/>
+			<HorizontalLayout />
+			<Button name="SaveBtn" width="90" height="32" font="1" text="保存编辑" normalimage="pic/noraml.png" hotimage="pic/hover.png" pushedimage="pic/active.png" padding="0,0,24,0" textpadding="14,8,14,8" font="1" textcolor="fffd6a2d" hottextcolor="#ffff7f47" pushedtextcolor="#ffec4703"/>
+			<Button name="ExpordWordBtn" width="90" height="32" font="1" text="导出word" padding="0,0,24,0" normalimage="pic/noraml1.png" hotimage="pic/hover2.png" pushedimage="pic/active2.png" textpadding="14,8,14,8" font="1"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout minwidth="1152" height="66" bkcolor="fff6f6f6" bordersize="1" bordercolor="#ffeeeeee" padding="24,14,24,0">
+			<Button name="PlayBtn" tooltip="播放" bkimage="pic/play-normal.png" hotimage="pic/play-hover.png" pushedimage="pic/play-pressed.png" padding="26,13,0,0" width="40" height="40"/>
+			<Button name="PauseBtn" tooltip="暂停" visible="false" tooltip="暂停" bkimage="file='pic/pause-normal.png'" hotimage="file='pic/pause-hover.png'" pushedimage="file='pic/pause-pressed.png'" padding="26,13,0,0" width="40" height="40" />
+			<Label name="StartTime" text="00:00:00" width="48" font="0" height="12" textcolor="#ff999999" padding="16,28,0,0"/>
+			<Slider name="sliderplay" showhtml="true" height="38" min="0" padding="8,14,0,0" value="0" hor="true" bkcolor="fff6f6f6" bkimage="file='pic/invalid-name_beijing.png' corner='6,0,6,0'" foreimage="file='pic/invalid-name_touming.png' corner='6,0,6,0'"  thumbimage="file='pic/slide-icon.png'" thumbsize="24,24" sendmove="true"/>
+			<Label name="EndTime" text="00:00:00" width="48" font="0" height="12" textcolor="#ff999999" padding="7,28,20,0"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout name="TitleBtnHLayout" height="22" padding="0,24,0,8">
+			<Button name="TitleBtn" tooltip="修改标题" align="left" height="22" font="2" textcolor="#ff333333" padding="24,0,0,0" valign="top"/>
+			<Button name="IconBtn" tooltip="修改标题" width="24" height="16" padding="0,4,0,2" hotimage="file='pic/TitleChangeHover.png' dest='8,0,24,16'" pushedimage="file='pic/TitleChange.png' dest='8,0,24,16'"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout name="TitleEditHLayout" height="32" padding="0,14,0,8" visible="false">
+			<RichEdit name="TitleEdit" maxchar="30" multiline="false" padding="24,0,0,0" font="1" bordersize="1" bordercolor="ffd4d4d4" borderround="0s,0" textcolor="#ff333333" width="360" height="32" textpadding="10,6,0,6" />
+			<Button name="SaveTitleBtn" width="60" height="32" font="1" text="保存" textcolor="ffffffff" bkcolor="#fffd6a2d" hotbkcolor="#ffff7f47" pushedbkcolor="ffec4703" padding="16,0,0,0"/>
+			<Button name="CancelBtn" width="60" height="32" font="1" text="取消" textcolor="ff000000" borderround="2,2" bordercolor="#ffd4d4d4" bordersize="1" focusbordercolor="#ffff7f47" padding="16,0,0,0"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout height="12" padding="0,0,0,0">
+			<Label name="LastModifyTimeLabel" text="最近一次修改时间：2019-04-22 20:18" font="0" padding="24,0,0,0" height="12" textcolor="ff999999"/>
+			<HorizontalLayout />
+			<Label name="TotalWordsLabel" text="共计：2345字" font="0" height="12" width="77" textcolor="ff999999" padding="0,0,24,0"/>
+		</HorizontalLayout>
+		
+		<Label width="1200" height="1" bkcolor="#ffeeeeee" padding="0,16,0,0"/>
+		
+		<RichEdit name="TextEdit" minwidth="1200" padding="1,1,1,1" minheight="552" showhtml="true" textpadding="24,24,24,24" font="1" textcolor="#ff333333" vscrollbar="true"/>
+	</VerticalLayout>
+	
+</Window>

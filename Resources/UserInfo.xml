@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="295,319" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30" bktrans="true">
+	<Font id="0" name="微软雅黑" size="18" color="#FFFFFFFF"/>
+	<Font id="1" name="微软雅黑" size="12" color="#FFFFFFFF"/>
+	<Font id="2" name="微软雅黑" size="10"/>
+	<Font id="3" name="微软雅黑" size="10" bold="true"/>
+	<Font id="4" name="微软雅黑" size="8"/>
+	
+	<VerticalLayout name="mainVLayout" width = "295" height="319" bkcolor="#ffffffffff">
+		<HorizontalLayout name="TitleHLayout" height="83" bkimage="pic/icBkimage1.png">
+			<ElipsePhoto name="IconLabel" bkimage="pic/imgPersonDefaultAvatar.png" width="48" height="48" padding="19,18,0,0"/>
+			<VerticalLayout name="TitleInfoVLayout" width="123" height="44" padding="12,20,0,0">
+				<Label name="TitleLabel" font="0" textcolor="FFFFFFFFF" align="left" valign="top" endellipsis="true" text="textg" maxwidth="123" height="26" textpadding="0,2,0,0"/>
+				<Label name="PhoneNumLabel" font="2" textcolor="#FFFFFFFF" height="18"/>
+			</VerticalLayout>
+			<Button name="RenewalBtn" bkcolor="#ffFF7846" hotbkcolor="#ffFF8051" pushedbkcolor="#ffF45514" font="1" textcolor="FFFFFFFFF"  width="60" height="26" padding="17,29,0,0"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout name="VipIconLayout" height="42" padding="0,17,0,0">
+			<Button name="vip1IconLabel"  bkimage="file='pic/icPersonMember1Off.png' dest='10,0,36,26'" font="3" textcolor="#ff908f9d" text="标准会员"  align="center" valign="bottom" height="42" width="46" padding="20,0,0,0"/>
+			<Button name="vip2IconLabel"  bkimage="file='pic/icPersonMember2Off.png' dest='10,0,36,26'" font="3" textcolor="#ff908f9d" text="高级会员"  align="center" valign="bottom" height="42" width="46" padding="24,0,0,0"/>
+			<Button name="vip3IconLabel"  bkimage="file='pic/icPersonMember3Off.png' dest='10,0,36,26'" font="3" textcolor="#ff908f9d" text="铂金会员"  align="center" valign="bottom" height="42" width="46" padding="24,0,0,0"/>
+			<Button name="vip4IconLabel" bkimage="file='pic/icPersonMember4Off.png' dest='10,0,36,26'" font="3" textcolor="#ff908f9d" text="钻石会员"  align="center" valign="bottom" height="42" width="46" padding="24,0,0,0"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout name="DataLayout" height="12">
+			<Label name="vip1DataLabel" font="4" width="51" height="12" text="未开通" padding="18,0,0,0" textcolor="#ff908f9d" align="center"/>
+			<Label name="vip2DataLabel" font="4" width="51" height="12" text="未开通" padding="18,0,0,0" textcolor="#ff908f9d" align="center"/>
+			<Label name="vip3DataLabel" font="4" width="51" height="12" text="未开通" padding="19,0,0,0" textcolor="#ff908f9d" align="center"/>
+			<Label name="vip4DataLabel" font="4" width="51" height="12" text="未开通" padding="19,0,0,0" textcolor="#ff908f9d" align="center"/>
+		</HorizontalLayout>
+		
+		<VerticalLayout height="41" padding="0,20,0,0">
+			<HorizontalLayout height="12">
+				<Label bkimage="pic/icPersonSpace.png" width="7" height="7" padding="20,2,0,0"/>
+				<Label name="TransLabel" font="1" padding="2,0,0,0" width="49" />
+				<Label bkimage="pic/icPersonSpace.png" width="7" height="7" padding="77,2,0,3"/>
+				<Label text="云存储空间" font="1" padding="2,0,0,0" width="61"/>
+			</HorizontalLayout>
+			
+			<HorizontalLayout height="5" padding="0,6,0,0">
+				<Progress name="TransTimeSlider"  mouse="false" width="119" height="5" bkimage="pic/icPersonLineBg.png" foreimage="pic/icPersonLineTime.png" min="0" padding="20,0,0,0"/>
+				<Progress name="CloudStoreSlider" mouse="false" width="119" height="5" bkimage="pic/icPersonLineBg.png" foreimage="pic/icPersonLineTime_1.png" min="0" padding="16,0,0,0"/>
+			</HorizontalLayout>
+			
+			<HorizontalLayout height="12" padding="0,6,0,0">
+				<Label name="TransTimeLabel"  height="12" width="119" align="left" font="2" textcolor="#ff908f9d" padding="20,0,0,0"/>
+				<Label name="CloudStoreLabel" height="12" width="119" align="left" font="2" textcolor="#ff908f9d" padding="16,0,0,0"/>
+			</HorizontalLayout>
+		</VerticalLayout>
+		
+		<Button name="TransTimeBtn"  float="true" width="119" height="41"  pos="20,176,139,217" />
+		<Button name="CloudStoreBtn" float="true" width="119" height="41" pos="155,176,274,217"/>
+		
+		<Label width="256" height="1" padding="20,20,0,0" bkcolor="#1a000000"/>
+		
+		<HorizontalLayout height="42" padding="0,20,0,0">
+			<Button name="TransRecordBtn"	bkimage="file='pic/icPersonRecord.png' dest='9,0,33,24'" hotimage="file='pic/icPersonRecordHover.png' dest='9,0,33,24'" pushedimage="file='pic/icPersonRecordPushed.png' dest='9,0,33,24'" text="转写记录" hottextcolor="#ffff7846" pushedtextcolor="#ffec4703" textpadding="0,28,0,0" width="42" padding="22,0,0,0" font="2"/>
+			<Button name="MyTimeBtn"		bkimage="file='pic/icPersonMyTime.png' dest='9,1,33,23'" hotimage="file='pic/icPersonMyTimeHover.png' dest='9,1,33,23'" pushedimage="file='pic/icPersonMyTimePushed.png' dest='9,1,33,23'" text="我的时长" hottextcolor="#ffff7846" pushedtextcolor="#ffec4703" textpadding="0,28,0,0" width="42" padding="27,0,0,0" font="2"/>
+			<Button name="MyMenberBtn"      bkimage="file='pic/icPersonMember.png' dest='9,0,33,24'" hotimage="file='pic/icPersonMemberHover.png' dest='9,0,33,24'" pushedimage="file='pic/icPersonMemberPushed.png' dest='9,0,33,24'" text="我的会员" hottextcolor="#ffff7846" pushedtextcolor="#ffec4703" textpadding="0,28,0,0" width="42" padding="27,0,0,0" font="2"/>
+			<Button name="ExitBtn"          bkimage="file='pic/icPersonExit.png'   dest='9,0,33,24'" hotimage="file='pic/icPersonExitHover.png'   dest='9,0,33,24'" pushedimage="file='pic/icPersonExitPushed.png'   dest='9,0,33,24'" text="退出登录" hottextcolor="#ffff7846" pushedtextcolor="#ffec4703" textpadding="0,28,0,0" width="42" padding="27,0,0,0" font="2"/>
+		</HorizontalLayout>
+	</VerticalLayout>
+<Window/>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="350,210" showshadow="true" caption="0,0,0,90" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30">
+	<Font id="0" name="微软雅黑" size="14" color="#000000"/>
+	<Font id="1" name="微软雅黑" size="16" color="#000000"/>
+	<Font id="2" name="微软雅黑" size="14" color="#000000" bold="true"/>
+	
+	<VerticalLayout  name="MainVLayout" width="350" height="210" bkcolor="#ffffffff">
+		<Label name="BolderLabel" height="1" bkcolor="#ffe24e1a" width="350"/>
+		<HorizontalLayout name="TitleHLayout" height="31">
+			<Label name="IconLabel" bkimage="pic/logo-copy-3.png" padding="9,6,0,4" width="20" height="20"/>
+			<Label name="TitleLabel" font="1" textcolor="#ff000000" padding="6,5,0,0" align="left" width="200" height="21" textpaddimg="6,5,0,0"/>
+			<HorizontalLayout />
+			<Button name="closebtn" tooltip="关闭" bkimage="file='pic/close-normal.png' dest='12,6,30,24'" width="42" height="31" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+		</HorizontalLayout>
+		
+	</VerticalLayout>
+</Window>

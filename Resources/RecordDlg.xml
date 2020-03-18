@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+<Default name="VScrollBar" shared="true" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='pic/vscrollbar.png' source='0,60,8,100' corner='0,4,0,4'&quot; thumbhotimage=&quot;file='pic/vscrollbar.png' source='8,60,16,100' corner='0,4,0,4'&quot; thumbpushedimage=&quot;file='pic/vscrollbar.png' source='16,60,24,100' corner='0,4,0,4'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='pic/vscrollbar.png' source='0,0,8,60' corner='0,4,0,4'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+  <Default name="HScrollBar" shared="true" value="height=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='pic/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; thumbhotimage=&quot;file='pic/hscrollbar.png' source='0,8,32,16' corner='4,0,4,0'&quot; thumbpushedimage=&quot;file='pic/hscrollbar.png' source='0,16,32,24' corner='4,0,4,0'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='pic/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+    <VerticalLayout>
+        <VerticalLayout height="121">
+            <HorizontalLayout height="82">
+                <Label name="RecordPenImage" width="70" height="70" bkimage="pic/weizhi.png" padding="12,11,0,0"/>
+                <VerticalLayout name="RecordPenLayout" width="400" padding="16,0,0,0">
+                    <HorizontalLayout>
+                        <Label name="BrandIcon" height="26" width="110" padding="0,15,0,0"/>
+                    </HorizontalLayout>
+                    <HorizontalLayout >
+                        <Label name="RecordPenName" text="智能录音笔C1" font="6" height="27"  padding="0,10,0,0"/>
+                        <Label name="VIPIcon" width="53" height="17" bkimage="pic/zunxiang.png" padding="7,16,0,0"/>
+                        <Button name="DeviceDetailInfoBtn" width="15" height="15" padding="8,16,0,0" normalimage="file='pic/xinxi.png' dest='0,0,15,15'" hotimage="file='pic/xinxi-hover.png' dest='0,0,15,15'" pushedimage="file='pic/xinxi-hover.png' dest='0,0,15,15'"/>
+                    	<HorizontalLayout />
+                    </HorizontalLayout>
+                </VerticalLayout>
+                <VerticalLayout/>
+                <VerticalLayout width="240" height="28" bordersize="1,1,1,1" padding="0,20,16,0" bordercolor="#FFd6d9e8">
+                    <HorizontalLayout>
+                        <Edit name="HintTextSearch" width="210" height="20" align="left" tipvalue="" textcolor="#FFd6d9e8" padding="2,4,0,0" />
+                        <Button name="HintSearchBtn" visible="true" width="14" height="14" normalimage="file='pic/search.png' dest='0,0,14,14'" hotimage="file='pic/search-hover.png' dest='0,0,14,14'" pushedimage="file='pic/search-hover.png' dest='0,0,14,14'" padding="8,7,0,0"/>
+                        <Button name="HintSearchBtnClose" visible="false" width="14" height="14" normalimage="file='pic/clean.png' dest='0,0,14,14'" hotimage="file='pic/clean-hover.png' dest='0,0,14,14'" pushedimage="file='pic/clean-hover.png' dest='0,0,14,14'" padding="8,7,0,0"/>
+                    </HorizontalLayout>
+                </VerticalLayout>
+            </HorizontalLayout>
+            
+            <HorizontalLayout>
+                <HorizontalLayout name="NormalRet" width="400">
+                    <Label name="AudioTextCout" text="发现12个音频文件，导入到" font="2" width="180" align="left" padding="13,1,0,0"/>
+                    <Button name="GotoAudioStoreBtn" width="70" height="14" font="2" text="我的音频库" textcolor="#ffff7846"
+                     hottextcolor="0xffff7f47" pushedtextcolor="0xffec4703" padding="0,13,0,0"/>
+                    <Label text="后可以进行转写" font="2" align="left" padding="1,1,0,0"/>
+                </HorizontalLayout>
+                <Label name="SearchRet" text="" font="2" width="180" align="left" padding="13,0,0,0" visible="false"/>
+                <HorizontalLayout/>
+                <Button name="RefershBtn" width="42" height="14" padding="0,8,24,0" normalimage="file='pic/shuaxin-normal.png'  source='0,0,16,14' dest='0,0,16,14'" hotimage="file='pic/shuaxin-hover.png' source='0,0,16,14' dest='0,0,16,14'" pushedimage="file='pic/shuaxin-hover.png'  source='0,0,16,14' dest='0,0,16,14'" text="刷新" font="3" textpadding="16,0,0,0"  hottextcolor="0xffff7f47" pushedtextcolor="0xffec4703"/>
+                <Button name="ImportBtn"  width="41" height="14" padding="0,8,24,0" normalimage="file='pic/daoru-disable.png' source='0,0,16,14' dest='0,0,16,14'" hotimage="file='pic/daoru-hover.png' source='0,0,16,14' dest='0,0,16,14'" pushedimage="file='pic/daoru-hover.png' source='0,0,16,14' dest='0,0,16,14'" text="导入" font="3" textpadding="16,0,0,0"  hottextcolor="0xffff7f47" pushedtextcolor="0xffec4703"/>
+                <Button name="DeleteBtn"  width="43" height="14" padding="0,8,26,0" normalimage="file='pic/shanchu-disable.png'  source='0,0,16,14' dest='0,0,16,14'" hotimage="file='pic/shanchu-hover.png' source='0,0,16,14' dest='0,0,16,14'" pushedimage="file='pic/shanchu-hover.png' source='0,0,16,14' dest='0,0,16,14'" text="删除" font="3" textpadding="16,0,0,0"  hottextcolor="0xffff7f47" pushedtextcolor="0xffec4703"/>
+            </HorizontalLayout>
+            
+        </VerticalLayout>
+        <VerticalLayout>
+            <List name="RecordDlgAudioList" bordersize="1,1,1,1" bordercolor="#FFd9dadb" bkcolor="#FFFCFDFF" itemlinecolor="#FFCCCED1" vscrollbar="true"  hscrollbar="true" visible="true">
+                <ListHeader height="24" bkcolor="#fff2f4f8">
+                    <ListHeaderItem width="442" minwidth="100" dragable="true" sepimage="file='pic/list_header_sep.png'" sepwidth="1" sepcolor="#FF000000">
+                        <HorizontalLayout>
+                            <CheckBox name="CheckBoxFileNameAll" width="12" height="12" padding="20,6,0,0" normalimage="file='pic/cheakbox.png' dest='0,0,12,12'" selectedimage="file='pic/cheakbox-xuanzhong.png' dest='0,0,12,12'" />
+                            <Label text="文件名" font="3" textcolor="0xff8C8C8C" padding="10,1,0,0"/>
+                        </HorizontalLayout>
+                    </ListHeaderItem>
+                    <ListHeaderItem width="175" minwidth="60" dragable="true" sepimage="file='pic/list_header_sep.png'" sepwidth="1" sepcolor="#FF000000">
+                        <HorizontalLayout>
+                            <Label text="创建时间" textcolor="0xff8C8C8C" width="48" font="3" padding="8,0,0,0" />
+                        </HorizontalLayout>
+                    </ListHeaderItem>
+                    <ListHeaderItem width="98" minwidth="50" dragable="true" sepimage="file='pic/list_header_sep.png'" sepwidth="1" sepcolor="#FF000000">
+                        <HorizontalLayout>
+                            <Label text="时长" textcolor="0xff8C8C8C" font="3" padding="8,0,0,0"/>
+                        </HorizontalLayout>
+                    </ListHeaderItem>
+                    <ListHeaderItem minwidth="90" minwidth="50" dragable="true" sepimage="file='pic/list_header_sep.png'" sepwidth="1" sepcolor="#FF000000">
+                        <HorizontalLayout>
+                            <Label text="操作"  textcolor="0xff8C8C8C" font="3" padding="8,0,0,0" />
+                        </HorizontalLayout>
+                    </ListHeaderItem>
+                </ListHeader>
+            </List>
+            <VerticalLayout  name="SearchEmpty" visible="false">
+                <HorizontalLayout/>
+                <HorizontalLayout>
+                        <VerticalLayout/>
+                        <VerticalLayout width="114">
+                            <Label width="109" height="98"  bkimage="file='pic/kong.png' dest='0,0,109,98'"  padding="5,0,0,0"/>
+                            <Label width="98" height="14" font="2" textcolor="0xff969696" text="未找到相关内容" padding="0,16,0,0"/>
+                        </VerticalLayout>
+                        <VerticalLayout/>
+                </HorizontalLayout>
+                <HorizontalLayout/>
+            </VerticalLayout>
+            <VerticalLayout  name="ForRecordLoad" visible="false">
+                <HorizontalLayout/>
+                <HorizontalLayout>
+                    <VerticalLayout/>
+                    <VerticalLayout width="114">
+                        <Ring name="WaitRecordRefresh" align="center" height="48" width="48" padding="32,0,0,0" bkimage="pic/loading.png"/>
+                    </VerticalLayout>
+                    <VerticalLayout/>
+                </HorizontalLayout>
+                <HorizontalLayout/>
+            </VerticalLayout>
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>

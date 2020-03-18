@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window caption="0,0,0,36" size="310，174" showshadow="true" shadowimage="pic/bk_store_exp.png" shadowsize="7" shadowcorner="28,28,28,30">
+   <Font id="0" name="微软雅黑" size="12" color="#000000"/>
+   <Font id="1" name="微软雅黑" size="12" bold="true" color="#000000"/>
+   <Font id="2" name="微软雅黑" size="10" color="#00000000"/>
+	<VerticalLayout  bkcolor="#FFFFFFFF" bodersize="1" bordercolor="#660B172D">
+	    <Label width="310" height="1" bkcolor="#FFff7846"/>
+	    <VerticalLayout height="143" width="266" padding="14,16,0,0">
+	        <Label width="48" height="12" font="1" text="临时存储" padding="0,0,0,0"/>
+	    <Label width="266" height="51" wordbreak="true" padding="0,10,0,0" font="0" text="上传的音频和转写内容，平台临时存储7天，不会消耗您的云存储空间，7天内您可以进行多端同步编辑查看。7天后自动过期放至音频库回收站。" />
+	        <Label width="48" height="12" font="1" text="云存储" padding="0,16,0,0"/>
+	        <Label width="266" height="36" wordbreak="true" padding="0,10,0,0" font="0" text="上传的音频和转写内容保存在您的云存储空间上，可以长期进行多端同步编辑查看。" />
+	    </VerticalLayout>
+	</VerticalLayout>
+</Window>

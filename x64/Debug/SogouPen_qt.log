@@ -1,0 +1,9 @@
+﻿  moc TravelDlg.h
+  SogouPen.cpp
+  TabPanel.cpp
+  TravelDlg.cpp
+  main.cpp
+  moc_SogouPen.cpp
+  moc_TabPanel.cpp
+  moc_TravelDlg.cpp
+  SogouPen_qt.vcxproj -> C:\Users\Administrator\Desktop\qt\SogouPen_qt\x64\Debug\SogouPen_qt.exe

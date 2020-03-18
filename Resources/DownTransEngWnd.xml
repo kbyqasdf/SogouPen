@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,90" mininfo = "350,210" maxinfo = "350,210" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30" >
+    <Font id="0" name="黑体" size="20" color="#000000"/>
+    <Font id="1" name="微软雅黑" size="13" color="#FFFFFFFF"/>
+    <Font id="2" name="微软雅黑" size="14" color="#FFFFFFFF"/>
+    <Font id="3" name="微软雅黑" size="12" color="#CC000000" />
+    <Font id="4" name="微软雅黑" size="10" color="#4d000000"/>
+    <Font id="5" name="微软雅黑" size="12" bold="true"/>
+	<Font id="6" name="微软雅黑" size="20" color="#CC000000" bold="true"/>
+	<Font id="7" name="微软雅黑" size="12" color="#ffffffff" bold="true"/>
+	<Font id="8" name="微软雅黑" size="24" color="#000000"/>
+	<Font id="9" name="微软雅黑" size="16" color="#ff000000"/>
+	<Font id="10" name="微软雅黑" size="14" bold="true"/>
+	<Font id="11" name="微软雅黑" size="20" color="#000000" bold="true"/>
+
+    <VerticalLayout name="GuideVLayout" bkcolor="#ffffffff">
+        <HorizontalLayout height="25">
+            <Label bkimage="file='pic/ic-logo.png' " width="20" height="20" padding="9,4,0,0" />
+            <Label text="下载本地转写引擎" font="9" textpadding="6,3,0,0" />
+            <HorizontalLayout />
+            <Button name="closebtn" tooltip="关闭" bkimage="file='pic/close10.png' dest='15,8,25,18'" hotimage="file='pic/close10-hover.png' dest='15,8,25,18'" width="40" height="25" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+        </HorizontalLayout>
+        <VerticalLayout height="60"/>
+        <HorizontalLayout height="40">
+            <Label bkimage="file='pic/xiazaizhong.png' " width="32" height="32" padding="53,0,0,0" />
+            <VerticalLayout height="40" width="200" bkcolor="#ffffffff" padding="20,0,0,0">
+                <Label name="trans_text" text="正在下载本地转写引擎 0%" font="2" valign="top" bkcolor="#ffffffff"/>
+                <Slider name="trans_slider" bkimage="file='pic/memory-gray.png'" foreimage="file='pic/memory-green.png'" width="192" height="4" enabled="false"/>
+            </VerticalLayout>
+        </HorizontalLayout>
+        <VerticalLayout height="38"/>
+        <HorizontalLayout height="30">
+            <Button name="btn_cancel" text="取消下载" width="90" height="30" bkcolor="#FFFFFFFF" hotbkcolor="0xfff4f5f6" pushedbkcolor="0xffd3d8dc" padding="234,0,0,0" font="2" bordercolor="#ffd3d8dc" bordersize="1"/>
+        </HorizontalLayout>
+    </VerticalLayout>
+	
+</Window>

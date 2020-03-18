@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="82,120" >
+	<Font id="0" name="微软雅黑" size="12" />
+	<VerticalLayout>
+	    <Label width="82" height="1" bkcolor="#FFff7846"/>
+	    <HorizontalLayout>
+	        <Label width="1" height="120" bkcolor="#FFff7846"/>
+	        <VerticalLayout name="mainVLayout" width = "80" height="118" >
+		
+	        </VerticalLayout>
+	        <Label width="1" height="120" bkcolor="#FFff7846"/>
+	    </HorizontalLayout>
+	    <Label width="82" height="1" bkcolor="#FFff7846"/>
+	</VerticalLayout>
+<Window/>

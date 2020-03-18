@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window caption="0,0,0,36" size="311，114" showshadow="true" shadowimage="pic/bk_device_detail.png" shadowsize="7" shadowcorner="28,28,28,30">
+   <Font id="0" name="微软雅黑" size="12" color="#000000"/>
+   <Font id="1" name="微软雅黑" size="12" bold="true" color="#000000"/>
+   <Font id="2" name="微软雅黑" size="10" color="#00000000"/>
+	<VerticalLayout  bkcolor="#FFFFFFFF">
+	    <Label width="311" height="1" bkcolor="#FFff7846"/>
+	    <HorizontalLayout height="27" padding="25,0,0,0">
+	        <Label width="49" height="11" padding="0,16,0,0" font="1" text="设备信息"/>
+	    </HorizontalLayout>
+	    
+	    <HorizontalLayout height="12" padding="25,15,0,0">
+			<HorizontalLayout width="130">
+				<Label font="0"  height="12" width="48" text="总容量 : " align="left"/>
+				<Label name="DeviceCapacity" height="12" font="0"  text="16G"/>
+			</HorizontalLayout>
+            <HorizontalLayout width="130">
+				<Label height="12" font="0" width="60" text="     "/>
+				<Label name="ExDeviceCapacity" height="12" font="0" text=""/>
+			</HorizontalLayout>
+	    </HorizontalLayout>
+	    
+	    <HorizontalLayout height="28" width="261" padding="15,0,0,0">
+	   		<Label name="AudioPercent"  bkcolor="#FF349aff" padding="0,16,0,0" align="center" height="10"/>
+	   		<Label name="OtherPercent" bkcolor="FFff9f5c" padding="0,16,0,0" align="center" height="10" />
+	   		<Label name="RemainPercent" bkcolor="#FFdde2e6" padding="0,16,0,0" align="center" height="10"/>
+	   	</HorizontalLayout>
+	   	
+	   	 <HorizontalLayout width="261"  padding="25,0,0,0">
+	   		<Label width="8" height="8" bkcolor="#FF349aff" padding="0,7,0,0" />
+	   		<Label name="AudioPercentText" font="2" height="10" width="70" text="录音：3.56G" textcolor="#00000000" padding="2,6,0,0"/>
+	   		<Label width="8" height="8" bkcolor="FFff9f5c" padding="8,7,0,0"/>
+	   		<Label name="OtherPercentText" font="2" height="10" width="70" text="其它：3.56G" textcolor="#00000000" padding="2,6,0,0"/>
+	   		<Label width="8" height="8" bkcolor="#FFdde2e6" padding="8,7,0,0"/>
+	   		<Label name="RemainPercentText" font="2" height="10" width="70" text="剩余：3.56G" textcolor="#00000000" padding="2,6,0,0"/>
+	   	</HorizontalLayout>
+	</VerticalLayout>
+</Window>

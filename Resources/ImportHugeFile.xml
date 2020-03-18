@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window caption="0,0,0,36" size="238，86" showshadow="true" shadowimage="pic/bk_import_failed.png" shadowsize="7" shadowcorner="28,28,28,30">
+   <Font id="0" name="微软雅黑" size="12" color="#000000"/>
+	<VerticalLayout  bkcolor="#FFFFFFFF">
+	    <VerticalLayout height="53" width="206" padding="17,16,0,0">
+	        <Label name="Content" width="206" height="53" wordbreak="true"  font="0" text="上传单个音频大小不得超过2G且时长不得超过5小时，您可以适当裁剪音频后分段上传。" />
+	    </VerticalLayout>
+	</VerticalLayout>
+</Window>

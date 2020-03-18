@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,90" mininfo = "766,452" maxinfo = "766,452" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30" >
+    <Font id="0" name="黑体" size="20" color="#000000"/>
+    <Font id="1" name="微软雅黑" size="13" color="#FFFFFFFF"/>
+    <Font id="2" name="微软雅黑" size="14" color="#FFFFFFFF"/>
+    <Font id="3" name="微软雅黑" size="12" color="#CC000000" />
+    <Font id="4" name="微软雅黑" size="10" color="#4d000000"/>
+    <Font id="5" name="微软雅黑" size="12" bold="true"/>
+	<Font id="6" name="微软雅黑" size="20" color="#CC000000" bold="true"/>
+	<Font id="7" name="微软雅黑" size="12" color="#ffffffff" bold="true"/>
+	<Font id="8" name="微软雅黑" size="24" color="#000000"/>
+	<Font id="9" name="微软雅黑" size="16" color="#ff000000"/>
+	<Font id="10" name="微软雅黑" size="16" bold="true"/>
+	<Font id="11" name="微软雅黑" size="20" color="#000000" bold="true"/>
+
+    <VerticalLayout bkcolor="#ffffffff">
+        <Label height="1" bkcolor="#FFff7846"/>
+        <HorizontalLayout height="40">
+            <Label text="欢迎使用搜狗录音助手" height="18" font="9" padding="40,22,0,0" align="center" />
+            <Button name="closebtn" bkimage="file='pic/close10.png' dest='15,8,25,18'" hotimage="file='pic/close10-hover.png' dest='15,8,25,18'" width="40" height="25" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+        </HorizontalLayout>
+        
+        <VerticalLayout width="726" height="300" padding="20,25,20,0" bkcolor="#FFF9F9F9" bordercolor="#FFEFEFEF" bordersize="1">
+            <HorizontalLayout padding="0,28,0,20">
+                <VerticalLayout>
+                    <Label height="17" text="整理录音文件" align="center" font="10" />
+                    <Label height="15" textcolor="#FF484848" text="音频一键导入 云端存储多端共享" align="center" font="2" padding="0,9,0,0" />
+                </VerticalLayout>
+                <VerticalLayout>
+                    <Label height="17" text="专业语音转写" align="center" font="10" />
+                    <Label height="15" textcolor="#FF484848" text="精准语音转文字 准确率高达95%" align="center" font="2" padding="0,9,0,0" />
+                </VerticalLayout>
+                <VerticalLayout>
+                    <Label height="17" text="声文对照编辑" align="center" font="10" />
+                    <Label height="15" textcolor="#FF484848" text="点击文字跳播音频 边听边改" align="center" font="2" padding="0,9,0,0" />
+                </VerticalLayout>
+            </HorizontalLayout>
+            <HorizontalLayout padding="13,0,13,10" width="700" height="200">
+                <Label name="apng_image" />
+            </HorizontalLayout>
+        </VerticalLayout>
+
+        <HorizontalLayout>
+            <Control />
+            <Button name="btnok" text="立即体验" padding="0,23,0,0" width="160" height="40" bkcolor="#ffff7846" hotbkcolor="#ffff8051" pushedbkcolor="#fff45514" font="2" textcolor="0xFFFFFFFF"/>
+            <Control />
+        </HorizontalLayout>
+
+    </VerticalLayout>
+</Window>

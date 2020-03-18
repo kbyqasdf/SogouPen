@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window name="ToastHintWnd" sizebox="6,6,6,6" caption="0,0,0,36" size="160,40" bktrans="true" roundcorner="4,4"  showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30">
+    <Font id="0" name="微软雅黑" size="14" bold="false"/>
+    <VerticalLayout  bkcolor="#ff666666">
+         <Label name="ToastLabel" height="16" font="0" textcolor="0xffffffff" text="音频正在云存储，请完成后进行转写。" align="center"/>         
+    </VerticalLayout>
+</Window>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,90" mininfo = "460,520" maxinfo = "460,520" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30" >
+    <Font id="0" name="黑体" size="20" color="#000000"/>
+    <Font id="1" name="微软雅黑" size="13" color="#FFFFFFFF"/>
+    <Font id="2" name="微软雅黑" size="14" color="#FFFFFFFF"/>
+    <Font id="3" name="微软雅黑" size="12" color="#CC000000" />
+    <Font id="4" name="微软雅黑" size="10" color="#4d000000"/>
+    <Font id="5" name="微软雅黑" size="12" bold="true"/>
+	<Font id="6" name="微软雅黑" size="20" color="#CC000000" bold="true"/>
+	<Font id="7" name="微软雅黑" size="12" color="#ffffffff" bold="true"/>
+	<Font id="8" name="微软雅黑" size="24" color="#000000"/>
+	<Font id="9" name="微软雅黑" size="16" color="#ff000000"/>
+	<Font id="10" name="微软雅黑" size="14" bold="true"/>
+	<Font id="11" name="微软雅黑" size="20" color="#000000" bold="true"/>
+
+<Default name="VScrollBar" shared="true" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='pic/vscrollbar_guide.png' source='0,60,8,100' corner='0,4,0,4'&quot; thumbhotimage=&quot;file='pic/vscrollbar_guide.png' source='8,60,16,100' corner='0,4,0,4'&quot; thumbpushedimage=&quot;file='pic/vscrollbar_guide.png' source='16,60,24,100' corner='0,4,0,4'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='pic/vscrollbar_guide.png' source='0,0,8,60' corner='0,4,0,4'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+
+    <VerticalLayout name="GuideVLayout" bkcolor="#ffffffff">
+        <HorizontalLayout height="25">
+            <HorizontalLayout />
+            <Button name="closebtn" tooltip="关闭" bkimage="file='pic/close10.png' dest='15,8,25,18'" hotimage="file='pic/close10-hover.png' dest='15,8,25,18'" width="40" height="25" padding="0,0,0,0" hotbkcolor="#ffff7846" pushedbkcolor="#ffe45926"/>
+        </HorizontalLayout>
+        <VerticalLayout height="25">
+            <Label text="如何使用录音助手？" font="9" textpadding="161,0,0,0"/>
+        </VerticalLayout>
+        <VerticalLayout height="20"/>
+        <VerticalLayout height="400" width="430" vscrollbar="true" bkcolor="#FFFFFFFF" padding="30,0,0,0">
+            <Label text="1.接入设备--导入" font="1"/>
+            <Label width="400" height="233" bkimage="file='pic/daoru-yinpin.png'"/>
+            <Label text="2.本地音频导入，点击左侧导航栏底部【导入本地音频】" font="1"/>
+            <Label width="400" height="245" bkimage="file='pic/daoru-bendi.png'"/>
+            <Label text="3.点击全部音频tab，点击【转写】图标" font="1"/>
+            <Label width="400" height="245" bkimage="file='pic/yindao-zhuanxie.png'"/>
+            <Label text="4.点击【提交订单】--【确认支付】完成订单支付" font="1"/>
+            <Label width="400" height="400" bkimage="file='pic/tijiao-dingdan.png'"/>
+            <Label text="5.点击列表【查看】图标，编辑转写内容" font="1"/>
+            <Label width="400" height="600" bkimage="file='pic/yindao-chakan.png'"/>
+        </VerticalLayout>
+
+        <HorizontalLayout>
+            <CheckBox name="checkit_nopop" height="14" width="100" padding="30,20,0,0" text="不再提示" normalimage="file='pic/checkbox.png' dest='0,1,12,13'" selectedimage="file='pic/checked.png' dest='0,1,12,13'" textpadding="20,0,0,0" align="left" font="3"/>
+            <Button name="btnok" text="知道了" width="120" height="30" bkcolor="#ffff7846" hotbkcolor="#ffff8051" pushedbkcolor="#fff45514" float="true" pos="170, 11" font="2" textcolor="0xFFFFFFFF"/>
+        </HorizontalLayout>
+
+    </VerticalLayout>
+	
+</Window>

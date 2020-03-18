@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="1240,800" mininfo="600,400" sizebox="6,6,6,6" caption="0,0,0,40" showshadow="true" shadowimage="pic/dialog_shadow.png" shadowsize="28" shadowcorner="28,28,28,30">
+	<Font id="0" name="微软雅黑" size="14"/>
+	
+	<VerticalLayout name="MainVLayout" bkcolor="#ffffffff" >
+		<HorizontalLayout height="40" bkcolor="#ffffffff">
+			<HorizontalLayout />
+    		<Button name="closebtn" tooltip="关闭" bkimage="file='pic/close-normal.png' dest='12,12,30,30'" width="40" height="40" padding="0,0,0,0" hotbkcolor="#ffff7846" hotimage="file='pic/close-hover.png' dest='12,12,30,30'" pushedbkcolor="#ffe45926"/>
+		</HorizontalLayout>
+		
+		<HorizontalLayout>
+			<TabLayout name="tab_Info">
+				<VerticalLayout name="LoadingVLayout">
+					<HorizontalLayout />
+					<HorizontalLayout>
+                    <VerticalLayout />
+						<VerticalLayout width="112" height="86">
+							<Ring name="ring" align="center" height="48" width="48" padding="32,0,0,0" bkimage="pic/loading.png"/>
+							<Label name="ringLabel" text="正在加载，请稍后" font="0" textcolor="#ff333333" padding="0,20,0,0" width="112" height="14" align="left"/>
+						</VerticalLayout>
+					<VerticalLayout />
+					</HorizontalLayout>
+					<HorizontalLayout />
+				</VerticalLayout>
+		
+				<VerticalLayout name="LoadFailedVLayout">
+					<HorizontalLayout />
+					<HorizontalLayout>
+						<VerticalLayout />
+						<VerticalLayout width="116" height="141">
+							<Label bkimage="pic/cdfdownloaddefault.png" width="106" height="100" padding="5,0,0,0"/>
+							<HorizontalLayout width="116" height="14" padding="0,27,0,0">
+								<Label text="下载失败，请" width="84" height="14" font="0" textcolor="#ff333333"/>
+								<Button name="retrybtn" text="重试" font="0" textcolor="#fffd6a2d" hottextcolor="#ffff7846" pushedtextcolor="#fff45514" padding="2,0,0,0" width="30" height="14"/>
+							</HorizontalLayout>
+						</VerticalLayout>
+						<VerticalLayout />
+					</HorizontalLayout>
+					<HorizontalLayout />
+				</VerticalLayout>
+        	</TabLayout>
+		</HorizontalLayout>
+		
+	</VerticalLayout>
+		
+</Window>

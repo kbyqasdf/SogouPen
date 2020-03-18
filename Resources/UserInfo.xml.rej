@@ -1,0 +1,10 @@
+diff a/Resources/UserInfo.xml b/Resources/UserInfo.xml	(rejected hunks)
+@@ -8,7 +8,7 @@
+ 	
+ 	<VerticalLayout name="mainVLayout" width = "295" height="319" bkcolor="#ffffffffff">
+ 		<HorizontalLayout name="TitleHLayout" height="83" bkimage="pic/icBkimage1.png">
+-			<HeadIcon name="IconLabel" bkimage="pic/imgPersonDefaultAvatar.png" width="48" height="48" padding="19,18,0,0"/>
++			<ElipsePhoto name="IconLabel" bkimage="pic/imgPersonDefaultAvatar.png" width="48" height="48" padding="19,18,0,0"/>
+ 			<VerticalLayout name="TitleInfoVLayout" width="123" height="44" padding="12,20,0,0">
+ 				<Label name="TitleLabel" font="0" textcolor="FFFFFFFFF" align="left" valign="top" endellipsis="true" text="textg" maxwidth="123" height="26" textpadding="0,2,0,0"/>
+ 				<Label name="PhoneNumLabel" font="2" textcolor="#FFFFFFFF" height="18"/>
